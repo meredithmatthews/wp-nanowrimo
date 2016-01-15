@@ -1,0 +1,11 @@
+<div class="entry-content">
+	<div ng-repeat="post in data.posts">
+		<a href="entry/{{post.id}}" ng-bind-html="post.title.rendered"></a>
+		<a href="entry/{{post.id}}" ng-if="post.featured_image_thumbnail_url"><img ng-src="{{post.featured_image_thumbnail_url}}" alt="{{post.featured_image.title.rendered}}" /></a>
+		<div ng-bind-html="post.content.rendered"></div>
+	</div>
+</div>
+<p ng-if="is404">{{errorMessage}}</p>
+<posts-nav-link prev-label="&laquo; Previous Page" next-label="Next Page &raquo;"></posts-nav-link>
+
+<br />
